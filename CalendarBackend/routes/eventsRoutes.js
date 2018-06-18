@@ -12,7 +12,6 @@ eventRoutes.route('/:id')
 	.put(eventsController.updateEvent)
 	.delete(eventsController.deleteEvent)
 
-eventRoutes.get('/:id',)
 
 eventRoutes.get('/days/:day',eventsController.showDayEvents)
 

@@ -11,7 +11,6 @@
   "author": "LS",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
     "express": "^4.16.3",
     "morgan": "^1.9.0",
     "pg-promise": "^8.4.4"
