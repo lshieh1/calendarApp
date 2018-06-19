@@ -15,5 +15,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://lilcalendar.herokuapp.com/"
+  "proxy": "http://localhost:3001/"
 }

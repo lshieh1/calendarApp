@@ -18,6 +18,8 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 app.use('/api/events',eventsRoutes)
 
+app.use(express.static('client/build'));
+
 app.use('*',(req,res) => {
 	res.status(404).json({message: 'Oops! Not found.'})
 })
