@@ -10,7 +10,7 @@ let db
 
 if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
     db = pgp({
-        database: process.env.PG_DATABASE || 'gamblr',
+        database: process.env.PG_DATABASE || 'calendarapi',
         port: process.env.PG_PORT || 5432,
         host: process.env.PG_HOST || 'localhost',
         username: 'lillian',
