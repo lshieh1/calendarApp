@@ -16,7 +16,7 @@ class Calendar extends Component {
 		return (
 			<div className='calendar'>
 				<h2>JUNE 2018</h2>
-				<Link to='/event'>List of All Events</Link>
+				<Link to='/event'>List of All Events</Link><br />
 				<div className='grid-container'>
 					<div className='grid-item day-of-week'>Sun</div>
 					<div className='grid-item day-of-week'>Mon</div>

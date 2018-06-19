@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import api from '../services/apiServices'
+import time from '../services/timeServices'
 import {Link,Redirect} from 'react-router-dom'
 
 class EventSingle extends Component {
@@ -47,7 +48,7 @@ class EventSingle extends Component {
 			<div className='event-single'>
 				<Link to='/'>{`<< Back to Calendar`}</Link>
 				<h2>June {this.state.apiData.day}, 2018</h2>
-				<h3>Time: {this.state.apiData.start_time} to {this.state.apiData.end_time}</h3>
+				<h3>Time: {time.convert24to12(this.state.apiData.start_time)} to {time.convert24to12(this.state.apiData.end_time)}</h3>
 				<p>Description: {this.state.apiData.description}</p>
 				<button onClick={this.deleteEvent}>Delete</button>
 				<button onClick={this.editButtonEvent}>Edit Event</button>

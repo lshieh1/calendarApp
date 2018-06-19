@@ -34,8 +34,10 @@ class DayEventList extends Component {
 		return (
 			<div className='day-event-list'>
 				<Link to='/'>{`<< Back to Calendar`}</Link>
+				<h2>June {this.props.match.params.day}, 2018</h2>
 				<br />
 				{this.state.apiDataLoaded ? this.renderEvents() : 'Nothing scheduled...'}
+				<br />
 			</div>
 		)
 	}

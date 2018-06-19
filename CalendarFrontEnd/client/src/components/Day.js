@@ -33,10 +33,9 @@ class Day extends Component {
 	render() {
 		return (
 			<div className='day-event-list-calendar'>
-				<Link to={`/day/${this.props.day}`}>{this.props.day}</Link><br/>
-				<Link to={`/day/${this.props.day}/new`}>+add</Link>
+				<Link className='calendar-number' to={`/day/${this.props.day}`}>{this.props.day}</Link><br/>
 				{this.state.apiDataLoaded ? this.renderEvents() : ''}
-
+				<Link to={`/day/${this.props.day}/new`}>+add</Link>
 			</div>
 		)
 	}

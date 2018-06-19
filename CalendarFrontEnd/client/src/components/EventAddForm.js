@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import api from '../services/apiServices'
-import {Redirect} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 
 class EventAddForm extends Component {
 	constructor(props) {
@@ -44,9 +44,11 @@ class EventAddForm extends Component {
 	render() {
 		return (
 			<div className='add-form'>
+				<Link to='/'>{`<< Back to Calendar`}</Link>
+				<hr />
 				<form onSubmit={this.handleFormSubmit}>
-					<input type='text' name='start_time' onChange={this.handleInputChange} placeholder='Start Time' />
-					<input type='text' name='end_time' onChange={this.handleInputChange} placeholder='End Time' />
+					<input type='text' name='start_time' onChange={this.handleInputChange} placeholder='Start Time (ex: 01:00PM)' />
+					<input type='text' name='end_time' onChange={this.handleInputChange} placeholder='End Time (ex: 03:00PM)' />
 					<input type='text' name='description' onChange={this.handleInputChange} placeholder='Description' />
 					<input type='submit' value='Submit' />
 				</form>

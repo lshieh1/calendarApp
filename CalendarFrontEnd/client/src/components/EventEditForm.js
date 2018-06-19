@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import api from '../services/apiServices'
-import {Redirect} from 'react-router-dom'
+import time from '../services/timeServices'
+import {Link, Redirect} from 'react-router-dom'
 
 class EventEditForm extends Component {
 	constructor() {
@@ -51,9 +52,12 @@ class EventEditForm extends Component {
 	render() {
 		return (
 			<div className='event-edit'>
+				<Link to='/'>{`<< Back to Calendar`}</Link>
+				<hr />
 				<form onSubmit={this.handleFormSubmit}>
-					<input type='text' onChange={this.handleInputChange} name='start_time' value={this.state.start_time} />
-					<input type='text' onChange={this.handleInputChange} name='end_time' value={this.state.end_time} /><br />
+					<input type='text' onChange={this.hanleInputChange} name='start_time' value={time.convert24to12(this.state.start_time)} />
+					to 
+					<input type='text' onChange={this.handleInputChange} name='end_time' value={time.convert24to12(this.state.end_time)} /><br />
 					<textarea onChange={this.handleInputChange} name='description' value={this.state.description}></textarea>
 					<input type='submit' value='Submit Edits' />
 				</form>

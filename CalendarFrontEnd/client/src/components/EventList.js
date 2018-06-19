@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import api from '../services/apiServices'
+import {Link} from 'react-router-dom'
 
 import Event from './Event'
 
@@ -26,13 +27,14 @@ class EventList extends Component {
 
 	renderEvents() {
 		return this.state.apiData.map((el,i) => {
-			return <Event key={el.id} event={el} />
+			return <Event key={el.id} event={el} isEventList={true}/>
 		})
 	}
 
 	render() {
 		return (
 			<div className='event-list'>
+				<Link to='/'>{`<< Back to Calendar`}</Link>
 				{this.state.apiDataLoaded ? this.renderEvents() : 'Loading...'}
 			</div>
 		)
