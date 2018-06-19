@@ -10,14 +10,12 @@ let db
 
 if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
     db = pgp({
-        database: 'calendarapi',
-        port: 5432,
-        host: 'localhost',
-        username: 'lillian',
-        password: '123'
+    database: process.env.PG_DATABASE || 'gamblr',
+    port: process.env.PG_PORT || 5432,
+    host: process.env.PG_HOST || 'localhost',
     });
 } else if (process.env.NODE_ENV === 'production') {
-    db = pgp(process.env.DATABASE_URL)
+    db = pgp(process.env.DATABASE_URL);
 }
 
 module.exports = db
