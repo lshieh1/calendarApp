@@ -19,10 +19,12 @@ class EventEditForm extends Component {
 
 	componentDidMount() {
 		api.getOneEvent(this.props.match.params.id).then(event => {
+			let start_time = time.convert24to12(event.data.data.start_time)
+			let end_time = time.convert24to12(event.data.data.end_time)
 			this.setState({
 				apiDataLoaded: true,
-				start_time: event.data.data.start_time,
-				end_time: event.data.data.end_time,
+				start_time: start_time,
+				end_time: end_time,
 				description: event.data.data.description
 			})
 		}).catch(err => {
@@ -55,9 +57,9 @@ class EventEditForm extends Component {
 				<Link to='/'>{`<< Back to Calendar`}</Link>
 				<hr />
 				<form onSubmit={this.handleFormSubmit}>
-					<input type='text' onChange={this.hanleInputChange} name='start_time' value={time.convert24to12(this.state.start_time)} />
+					<input type='text' onChange={this.handleInputChange} name='start_time' value={this.state.start_time} />
 					to 
-					<input type='text' onChange={this.handleInputChange} name='end_time' value={time.convert24to12(this.state.end_time)} /><br />
+					<input type='text' onChange={this.handleInputChange} name='end_time' value={this.state.end_time} /><br />
 					<textarea onChange={this.handleInputChange} name='description' value={this.state.description}></textarea>
 					<input type='submit' value='Submit Edits' />
 				</form>
