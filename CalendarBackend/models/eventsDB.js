@@ -12,16 +12,16 @@ module.exports = {
 
 	createEvent(event) {
 		return db.one(`INSERT INTO events (start_time,end_time,description,day) 
-			VALUES ($[start_time],$[end_time],$[description],$[day]) RETURNING *`)
+			VALUES ($[start_time],$[end_time],$[description],$[day]) RETURNING *`,event)
 	},
 
 	showDayEvents(day) {
-		return db.many(`SELECT * FROM events WHERE day=$1`,day)
+		return db.many(`SELECT * FROM events WHERE day=$1 ORDER BY start_time`,day)
 	},
 
-	updateEvent(event) {
-		return db.one(`UPDATE events SET start_time=$[start_time], end_time=$[end_time], description=$[description], day=$[day]
-			WHERE is=$[id] RETURNING *`,event)
+	updateEvent(event,id) {
+		return db.one(`UPDATE events SET start_time=$1, end_time=$2, description=$3 
+			WHERE id=$4 RETURNING *`,[event.start_time,event.end_time,event.description,id])
 	},
 
 	deleteEvent(id) {

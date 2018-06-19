@@ -1,6 +1,8 @@
 import axios from 'axios'
 
-export default = {
+
+
+export default {
 
 	getAllEvents() {
 		return axios.get('/api/events')
@@ -30,8 +32,7 @@ export default = {
 			data: {
 				start_time: event.start_time,
 				end_time: event.end_time,
-				description: event.description,
-				day: event.day				
+				description: event.description,				
 			}
 		})
 	},
@@ -41,6 +42,6 @@ export default = {
 	},
 
 	deleteEvent(id) {
-		return axios.delete(`api/events/${id}`)
+		return axios.delete(`/api/events/${id}`)
 	}
 }

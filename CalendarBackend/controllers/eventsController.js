@@ -58,8 +58,8 @@ module.exports = {
 		}) 
 	},
 
-	updateEvent(res,req) {
-		eventsDB.updateEvent(req.body).then(event => {
+	updateEvent(req,res) {
+		eventsDB.updateEvent(req.body,req.params.id).then(event => {
 			res.json({
 				message: 'ok',
 				data: event

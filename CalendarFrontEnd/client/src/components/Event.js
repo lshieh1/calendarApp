@@ -1,11 +1,15 @@
-import React, {Component} from 'react'
-import api from '../services/apiServices'
+import React from 'react'
 
-class Event extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			event_id: props
-		}
-	}
+const Event = (props) => {
+	return (
+		<div className='event'>
+			<hr />
+			<h2>June {props.event.day}, 2018</h2>
+			<h3>{props.event.start_time} to {props.event.end_time}</h3>
+			<p>{props.event.description}</p>
+			<hr />
+		</div>
+	)
 }
+
+export default Event

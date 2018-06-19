@@ -18,8 +18,8 @@ class App extends Component {
                 <div className='App'>
                     <Header />
                     <Route exact path='/' component={Calendar} />
-                    <Route path='/day/:day' component={DayEventList} />
-                    <Route path='/event/add' component={EventAddForm} />
+                    <Route exact path='/day/:day' component={DayEventList} />
+                    <Route path='/day/:day/new' component={EventAddForm} />
                     <Route path='/event/:id/edit' component={EventEditForm} />
                     <Route exact path='/event' component={EventList} />
                     <Route exact path='/event/:id' component={EventSingle} />

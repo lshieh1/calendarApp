@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import api from '../services/apiServices'
+import {Link} from 'react-router-dom'
 
 import Event from './Event'
 
 class DayEventList extends Component {
-	contructor() {
-		super()
+	constructor(props) {
+		super(props)
 		this.state = {
 			apiDataLoaded: false,
 			apiData: null
@@ -32,8 +33,12 @@ class DayEventList extends Component {
 	render() {
 		return (
 			<div className='day-event-list'>
-				{this.state.apiDateLoaded ? this.renderEvents() : 'Loading...'}
+				<Link to='/'>{`<< Back to Calendar`}</Link>
+				<br />
+				{this.state.apiDataLoaded ? this.renderEvents() : 'Nothing scheduled...'}
 			</div>
 		)
 	}
 }
+
+export default DayEventList

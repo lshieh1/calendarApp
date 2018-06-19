@@ -18,6 +18,6 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 app.use('/api/events',eventsRoutes)
 
-app.use('*',(res,req) => {
-	res.status(404).send({message: 'Oops! Not found.'})
+app.use('*',(req,res) => {
+	res.status(404).json({message: 'Oops! Not found.'})
 })

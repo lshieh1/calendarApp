@@ -3,3 +3,29 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.grid-container {
+	display: inline-grid;
+	grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.grid-item {
+	border: 1px solid black;
+	width: 180px;
+	height: 180px;
+}
+
+.faded {
+	color: gray;
+	font-size: 25px;
+}
+
+.day-of-week {
+	font-size: 20px;
+	height: 35px;
+}
+
+.event-in-calendar {
+	margin: 8px;
+}
+
