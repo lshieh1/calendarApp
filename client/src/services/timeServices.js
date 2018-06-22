@@ -4,7 +4,7 @@ export default {
 		let sections = time.split(':')
 		let result = sections.slice(0,2)
 		let ending = 'AM'
-		if(parseInt(result[0]) > 12) {
+		if(parseInt(result[0]) >= 12) {
 			result[0] = (parseInt(result[0])-12).toString()
 			ending = 'PM'
 		}
